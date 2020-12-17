@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+:root {
+  --FISD-dark-blue: #184366;
+  --FISD-light-blue: #5ab3c4;
+  --FISD-yellow: #e8b20f;
+  --FISD-light-green: #0e987d;
+  --FISD-light-orange: #e95b37;
+}
+
+body {
+  min-height: 100vw;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+select {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  font-size: 1.5rem;
+  padding: 1em 5em 1em 1.5em;
+  background: #0e987d;
+  color: #ececec;
+  border: 0;
+}
+
+select option:hover {
+  background: #f7d052;
+  color: #ececec;
+}
+
+.custom-select {
+  position: relative;
+}
+.custom-arrow {
+  position: absolute;
+  top: 0;
+  left: 120%;
+  display: block;
+  width: 4em;
+  height: 100%;
+  background: #184366;
+  pointer-events: none !important;
+}
+
+.custom-arrow::before,
+.custom-arrow::after {
+  --border-size: 0.6rem;
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.custom-arrow::before {
+  border-left: var(--border-size) solid transparent;
+  border-right: var(--border-size) solid transparent;
+  border-bottom: var(--border-size) solid #ececec;
+  top: 35%;
+}
+
+.custom-arrow::after {
+  border-left: var(--border-size) solid transparent;
+  border-right: var(--border-size) solid transparent;
+  border-top: var(--border-size) solid #ececec;
+  top: 60%;
+}
