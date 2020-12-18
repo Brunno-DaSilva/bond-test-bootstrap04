@@ -256,33 +256,40 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   ];
 
-  const htmlData = (data) => {
+  const htmlData = ({
+    img,
+    title,
+    projectCompletion,
+    projectBudget,
+    completionPercent,
+    description,
+  }) => {
     return `
     <div class="searched-items">
       <div class="items-head">
         <div class="img-container">
-          <img src=${data.img} alt=${data.title} />
+          <img src=${img} alt=${title} />
         </div>
         <div class="item-wrapper">
           <div class="items-short-info">
             <div class="short-info-holder">
               <i class="fas fa-calendar-alt"></i>
-              <span>${data.projectCompletion}</span>
+              <span>${projectCompletion}</span>
             </div>
             <div class="short-info-holder">
               <i class="fas fa-coins"></i>
               <span>$${
-                data.projectBudget >= 1000000
-                  ? data.projectBudget.toFixed(2).slice(0, 2)
-                  : data.projectBudget.toFixed(2).slice(0, 3)
+                projectBudget >= 1000000
+                  ? projectBudget.toFixed(2).slice(0, 2)
+                  : projectBudget.toFixed(2).slice(0, 3)
               } 
-              ${data.projectBudget >= 1000000 ? "M" : "K"}
+              ${projectBudget >= 1000000 ? "M" : "K"}
               </span>
             </div>
   
             <div class="short-info-holders progress-bar">
               <div class="progress-bar-value">
-                % ${data.completionPercent}
+                % ${completionPercent}
               </div>
               <div class="progress-bar-fill"></div>
             </div>
@@ -290,14 +297,14 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
   
           <h2 class="item-wrapper-title">
-            ${data.title}
+            ${title}
           </h2>
           
         </div>
       </div>
       <div class="items__body">
         <div class="item__text-wrapper">
-          <p class="item__text">${data.description}</p>
+          <p class="item__text">${description}</p>
         </div>
         <div class="item__btn-container">
           <button type="button">
@@ -334,7 +341,22 @@ document.addEventListener("DOMContentLoaded", () => {
       })
       .join("");
 
-    cardsContainer.innerHTML = html;
+    if (html.length > 0) {
+      cardsContainer.innerHTML = html;
+    } else {
+      cardsContainer.innerHTML = `
+      
+      <div class="notFound">
+        <div class="notFound__img">
+          <img src="https://res.cloudinary.com/duprwuo4j/image/upload/v1608312445/fisd-logo-full-color-rgb_mqunwz.png" alt="Search Icons">
+        </div>
+        <div class="notFound__text">
+          <h3>No results containing all your search terms were found.</h3>
+          <p>Your search: <span>${this.value}</span></p>
+          <p>Try searching for title, category, or campus type</p>
+        </div>
+      </div>`;
+    }
   }
 
   // DropDownFilter
@@ -652,5 +674,3 @@ document.addEventListener("DOMContentLoaded", () => {
     displayMatches();
   };
 });
-
-

@@ -135,10 +135,55 @@ select option {
   padding: 0.5rem 0;
 }
 
+.notFound {
+  width: 100%;
+  padding: 2.5rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.notFound__img,
+.notFound__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.notFound__img img {
+  width: 50rem;
+  height: auto;
+  padding: 2.5rem 0.5rem;
+}
+
+.notFound__text {
+  width: 100%;
+}
+
+.notFound__text h3 {
+  color: #3d3d3d;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+
+.notFound__text p {
+  color: #969696;
+  font-size: 2.5rem;
+  padding: 0.5rem;
+}
+
+.notFound__text span {
+  color: var(--FISD-dark-blue);
+  font-size: 2.5rem;
+  font-weight: bold;
+}
 /****************************************
 *         More Info Grid btn
 ****************************************/
-
 
 .more__info-plus {
   display: flex;
@@ -175,7 +220,6 @@ select option {
 .btn-container input[type="button"]:hover {
   opacity: 0.9;
 }
-
 
 /****************************************
 *            More Buttons
