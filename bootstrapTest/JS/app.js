@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
       campus: "N/A",
       campusType: "Middle School",
       projectBudget: 26632000,
-      isCompleted: false,
+      isCompleted: true,
       projectCompletion: "05/26/2022",
       completionPercent: 13,
       finalCost: 26652000,
@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
       campus: "N/A",
       campusType: "Middle School",
       projectBudget: 150000,
-      isCompleted: false,
+      isCompleted: true,
       projectCompletion: "05/21/2021",
       completionPercent: 8,
       finalCost: 37652000,
@@ -161,7 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
       campus: "N/A",
       campusType: "High School",
       projectBudget: 29632000,
-      isCompleted: false,
+      isCompleted: true,
       projectCompletion: "03/26/2022",
       completionPercent: 26,
       finalCost: 29652000,
@@ -212,7 +212,7 @@ document.addEventListener("DOMContentLoaded", () => {
       campus: "N/A",
       campusType: "Other",
       projectBudget: 40632000,
-      isCompleted: false,
+      isCompleted: true,
       projectCompletion: "03/10/2022",
       completionPercent: 70,
       finalCost: 45652000,
@@ -246,7 +246,7 @@ document.addEventListener("DOMContentLoaded", () => {
       campus: "N/A",
       campusType: "Middle School",
       projectBudget: 10002000,
-      isCompleted: false,
+      isCompleted: true,
       projectCompletion: "03/01/2022",
       completionPercent: 15,
       finalCost: 26652000,
@@ -263,12 +263,21 @@ document.addEventListener("DOMContentLoaded", () => {
     projectBudget,
     completionPercent,
     description,
+    isCompleted,
   }) => {
     return `
     <div class="searched-items">
       <div class="items-head">
         <div class="img-container">
           <img src=${img} alt=${title} />
+          ${
+            isCompleted
+              ? `<div class="img-container__label">
+                    <p>Completed</p>
+                 </div>`
+              : `""`
+          }
+
         </div>
         <div class="item-wrapper">
           <div class="items-short-info">
