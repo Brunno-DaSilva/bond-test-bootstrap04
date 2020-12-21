@@ -348,17 +348,18 @@ select option {
 .img-container__label {
   position: absolute;
   z-index: 100;
-  width: 8.5rem;
+  width: 10rem;
   height: 3rem;
   top: 0;
   right: 0;
   border-bottom-left-radius: 0.5rem;
-  border-top-left-radius: 0.5rem;
-  background-color: var(--FISD-light-orange);
-  color: #dfdfdf;
+  background-color: #2e9eb4;
+  color: #e6e7e8;
   font-weight: bolder;
-  padding: 0.5rem;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  letter-spacing: 1px;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.19),
+    0 6px 6px rgba(247, 245, 245, 0.23);
 }
 
 .item-wrapper {
