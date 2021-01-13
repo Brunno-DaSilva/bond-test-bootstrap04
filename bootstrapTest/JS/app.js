@@ -11,8 +11,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnProject = document.getElementById("btn-project");
   const btnDate = document.getElementById("btn-date");
   const btnCompletion = document.getElementById("btn-completion");
+<<<<<<< HEAD
   const schoolFilter = document.getElementById("dataType");
   const categoryFilter = document.getElementById("projectCategory");
+=======
+  const categoryFilter = document.getElementById("projectCategory");
+  const schoolFilter = document.getElementById("dataType");
+>>>>>>> 6a555f167971e3fad1289909a3f8f8f6b0f51c29
 
   //API
   const baseURL = `https://jsonplaceholder.typicode.com/users`;
@@ -678,7 +683,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   btnPlus.addEventListener("click", showMoreFilters);
-  btnForm.addEventListener("click", selectDropdown);
+
+  // btnForm.addEventListener("click", selectDropdown);
 
   categoryFilter.addEventListener("change", selectDropdown);
   schoolFilter.addEventListener("change", selectDropdown);
