@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Variables
-
   const searchInput = document.querySelector(".search");
   const cardsContainer = document.querySelector(".cards-container");
   const btnForm = document.getElementById("btn-form");
@@ -33,15 +32,17 @@ document.addEventListener("DOMContentLoaded", () => {
   </div>
 </div>`;
 
-  fetch(baseURL)
-    .then((response) => response.json())
-    .then((data) => {
-      dataSet.push(...data);
-      init();
-    })
-    .catch((error) => {
-      cardsContainer.innerHTML = `${NO_DATA_FOUND} ${error}`;
-    });
+  function getData() {
+    fetch(baseURL)
+      .then((response) => response.json())
+      .then((data) => {
+        dataSet.push(...data);
+        init();
+      })
+      .catch((error) => {
+        cardsContainer.innerHTML = `${NO_DATA_FOUND} ${error}`;
+      });
+  }
 
   function init() {
     // Display data
@@ -54,65 +55,69 @@ document.addEventListener("DOMContentLoaded", () => {
       Description,
       IsComplete,
       ProjectId,
+      Category,
     }) => {
       return `
-      <div class="searched-items">
-        <div class="items-head">
-          <div class="img-container">
-            <img src=${ThumbnailImg} alt=${ProjectTitle} />
-            ${
-              IsComplete
-                ? `<div class="img-container__label">
-                      <p>Completed</p>
-                   </div>`
-                : `""`
-            }
-  
-          </div>
-          <div class="item-wrapper">
-            <div class="items-short-info">
-              <div class="short-info-holder">
-                <i class="fas fa-calendar-alt"></i>
-                <span>${ProjectedCompletionString}</span>
-              </div>
-              <div class="short-info-holder">
-                <i class="fas fa-coins"></i>
-                <span>$${
-                  ProjectedBudget >= 1000000
-                    ? ProjectedBudget.toFixed(2).slice(0, 2)
-                    : ProjectedBudget.toFixed(2).slice(0, 3)
-                } 
-                ${ProjectedBudget >= 1000000 ? "M" : "K"}
-                </span>
-              </div>
-    
-              <div class="short-info-holders progress-bar">
-                <div class="progress-bar-value">
-                  ${PercentComplete}% 
-                </div>
-                <div class="progress-bar-fill"></div>
-              </div>
-    
+    <div class="searched-items">
+      <div class="items-head">
+        <div class="img-container">
+          <img src=${ThumbnailImg} alt=${ProjectTitle} />
+          ${
+            IsComplete
+              ? `<div class="img-container__label">
+                    <p>Completed</p>
+                 </div>`
+              : `""`
+          }
+
+        </div>
+        <div class="item-wrapper">
+          <div class="items-short-info">
+            <div class="short-info-holder">
+              <i class="fas fa-calendar-alt"></i>
+              <span>${ProjectedCompletionString}</span>
             </div>
-    
-            <h2 class="item-wrapper-title">
-              ${ProjectTitle}
-            </h2>
+
+            <div class="short-info-holder">
+              <i class="fas fa-coins"></i>
+              <span>$${
+                ProjectedBudget >= 1000000
+                  ? ProjectedBudget.toFixed(2).slice(0, 2)
+                  : ProjectedBudget.toFixed(2).slice(0, 3)
+              } 
+              ${ProjectedBudget >= 1000000 ? "M" : "K"}
+              </span>
+            </div>
+  
+            <div class="short-info-holders progress-bar">
+              <div class="progress-bar-value">
+                ${PercentComplete}% 
+              </div>
+              <div class="progress-bar-fill"></div>
+            </div>
           </div>
+  
+          <h2 class="item-wrapper-title">
+            ${ProjectTitle}
+          </h2>
+          <p class="item-wrapper-subtitle">
+            ${Category}
+          </p>
         </div>
-        <div class="items__body">
-          <div class="item__text-wrapper">
-            <p class="item__text">${Description}</p>
-          </div>
-          <div class="item__btn-container">
-            <button type="button">
-              <a class="anchor-override" href="https://res.friscoisd.org/services/Bond/Updates?projectId=${ProjectId}&refresh=true">
-              Details
-              </a>
-            </button>
-          </div>
+      </div>
+      <div class="items__body">
+        <div class="item__text-wrapper">
+          <p class="item__text">${Description}</p>
         </div>
-      </div>`;
+        <div class="item__btn-container">
+          <button type="button">
+            <a class="anchor-override" href="https://res.friscoisd.org/services/Bond/Updates?projectId=${ProjectId}&refresh=true">
+            Details
+            </a>
+          </button>
+        </div>
+      </div>
+    </div>`;
     };
 
     //Search
@@ -406,7 +411,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     btnBudget.addEventListener("click", function () {
       let sortedArr = dataSet.sort((a, b) => {
-        return a.projectBudget - b.projectBudget;
+        return a.ProjectedBudget - b.ProjectedBudget;
       });
       const html2 = sortedArr
         .map((data) => {
@@ -418,10 +423,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     btnCategory.addEventListener("click", function () {
       let sortedArr = dataSet.sort((a, b) => {
-        if (a.category < b.category) {
+        if (a.Category < b.Category) {
           return -1;
         }
-        if (a.category > b.category) {
+        if (a.Category > b.Category) {
           return 1;
         }
         return 0;
@@ -436,10 +441,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     btnSchool.addEventListener("click", function () {
       let sortedArr = dataSet.sort((a, b) => {
-        if (a.title < b.title) {
+        if (a.ProjectTitle < b.ProjectTitle) {
           return -1;
         }
-        if (a.title > b.title) {
+        if (a.ProjectTitle > b.ProjectTitle) {
           return 1;
         }
         return 0;
@@ -473,10 +478,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     btnDate.addEventListener("click", function () {
       let sortedArr = dataSet.sort((a, b) => {
-        if (a.projectCompletion < b.projectCompletion) {
+        if (a.ProjectedCompletionString < b.ProjectedCompletionString) {
           return -1;
         }
-        if (a.projectCompletion > b.projectCompletion) {
+        if (a.ProjectedCompletionString > b.ProjectedCompletionString) {
           return 1;
         }
         return 0;
@@ -492,10 +497,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     btnCompletion.addEventListener("click", function () {
       let sortedArr = dataSet.sort((a, b) => {
-        if (a.completionPercent < b.completionPercent) {
+        if (a.PercentComplete < b.PercentComplete) {
           return -1;
         }
-        if (a.completionPercent > b.completionPercent) {
+        if (a.PercentComplete > b.PercentComplete) {
           return 1;
         }
         return 0;
@@ -517,4 +522,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     searchInput.addEventListener("keyup", displayMatches);
   }
+
+  window.onload = () => {
+    getData();
+  };
 });

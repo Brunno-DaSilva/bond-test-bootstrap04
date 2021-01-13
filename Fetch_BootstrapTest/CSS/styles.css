@@ -427,7 +427,14 @@ select option {
 h2 {
   color: var(--FISD-dark-blue);
   margin: 1.8rem 1.2rem !important;
+  margin-bottom: 0 !important;
   font-size: 2rem !important;
+}
+
+.item-wrapper-subtitle {
+  color: var(--FISD-dark-blue) !important;
+  margin: 0rem 1.2rem !important;
+  font-size: 1.5rem !important;
 }
 
 .items__body {
