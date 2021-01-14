@@ -45,12 +45,25 @@ document.addEventListener("DOMContentLoaded", () => {
     }) => {
       return `
       <div class="container__top" id="container__top">
-      <div class="top__title">
-        <h1>${ProjectTitle}</h1>
-        <p>
-          <em class="fa fa-graduation-cap" aria-hidden="true"></em> ${CampusType}
-        </p>
-      </div>
+        <div class="top__info-isComplete">
+          <div class="top__title">
+            <h1>${ProjectTitle}</h1>
+            <p>
+              <em class="fa fa-graduation-cap" aria-hidden="true"></em> ${CampusType}
+            </p>
+          </div>
+
+          <div class="isComplete">
+          ${
+            IsComplete
+              ? `<div class="isComplete__label">
+                    <p>Completed</p>
+                </div>`
+              : ``
+          }              
+          </div>
+        </div>
+      
       <div class="top__img">
         <img
           src="${ThumbnailImg}"
