@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
     </div>
     <div class="container__middle">
-      <div class="top__title middle-title">
+      <div class="top__title_middle middle-title">
         <h1>Updates</h1>
         <p>
           <em class="fa fa-pencil-square" aria-hidden="true"></em> Updated
