@@ -277,6 +277,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="items-head">
         <div class="img-container">
           <img src=${img} alt=${title} />
+          
           ${
             isCompleted
               ? `<div class="img-container__label">

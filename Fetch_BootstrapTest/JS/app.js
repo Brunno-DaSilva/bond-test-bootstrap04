@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
         <div class="item__btn-container">
           <button type="button">
-            <a class="anchor-override" href="https://res.friscoisd.org/services/Bond/Updates?projectId=${ProjectId}&refresh=true">
+            <a class="anchor-override" href="http://dev.friscoisd.org/about/2018-bond-program/new-bond-project---detail-view?projectId=${ProjectId}">
             Details
             </a>
           </button>

@@ -3,10 +3,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const app = document.getElementById("app");
   // const top_Container = document.getElementById("container__top");
-  const baseURL =
-    "https://res.friscoisd.org/services/Bond/Project?filterType=test&filter=test&refresh=true";
-  const updateURL = `https://res.friscoisd.org/services/Bond/Updates?projectId=18BD-1009&refresh=true`;
+
+  // [ ] = projectId
+  // getParameterByName("pid")
+
+  const project_ID = getParameterByName("projectId");
+  const baseURL = `https://res.friscoisd.org/services/Bond/Project?filterType=id&filter=${project_ID}&refresh=true`;
+
+  // const updateURL = `https://res.friscoisd.org/services/Bond/Updates?projectId=18BD-1009&refresh=true`;
+
   const dataSet = [];
+
   const NO_DATA_FOUND = `<div class="notFound">
   <div class="notFound__img">
     <img src="https://res.cloudinary.com/duprwuo4j/image/upload/v1608312445/fisd-logo-full-color-rgb_mqunwz.png" alt="Search Icons">
@@ -78,7 +85,11 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
           <div class="info-extra__title">
             <span>Estimated Completion Date</span>
-            <p>${ProjectedCompletionString}</p>
+            <p>${
+              ProjectedCompletionString == ""
+                ? "12/12/2022"
+                : ProjectedCompletionString
+            }</p>
           </div>
         </div>
         <!-- Projected Budget -->
@@ -381,4 +392,13 @@ document.addEventListener("DOMContentLoaded", () => {
   window.onload = () => {
     getData();
   };
+
+  function getParameterByName(name, url = window.location.href) {
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+      results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return "";
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+  }
 });
