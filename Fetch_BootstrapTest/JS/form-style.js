@@ -1,1 +1,1 @@
-console.log("ciao bela me piacere parlare italiano");
+console.log("こんにちは美しい私は日本語を話すのが好きです");
