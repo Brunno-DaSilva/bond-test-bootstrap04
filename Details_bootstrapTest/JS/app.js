@@ -15,9 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const dataSet = [];
 
   const NO_DATA_FOUND = `<div class="notFound">
-  <div class="notFound__img">
-    <img src="https://res.cloudinary.com/duprwuo4j/image/upload/v1608312445/fisd-logo-full-color-rgb_mqunwz.png" alt="Search Icons">
-  </div>
   <div class="notFound__text">
     <h3>No results containing all your search terms were found.</h3>
     <p>Your search: <span>${this.value}</span></p>
