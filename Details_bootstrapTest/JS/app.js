@@ -7,12 +7,16 @@ document.addEventListener("DOMContentLoaded", () => {
   // [ ] = projectId
   // getParameterByName("pid")
 
-  const project_ID = getParameterByName("projectId");
-  const baseURL = `https://res.friscoisd.org/services/Bond/Project?filterType=id&filter=${project_ID}&refresh=true`;
+  // const project_ID = getParameterByName("projectId");
+  const project_ID = "18BD-1002";
 
-  // const updateURL = `https://res.friscoisd.org/services/Bond/Updates?projectId=18BD-1009&refresh=true`;
+  // const baseURL = `https://res.friscoisd.org/services/Bond/Project?filterType=id&filter=${project_ID}&refresh=true`;
+  const baseURL = `https://res.friscoisd.org/services/Bond/Project?filterType=test&filter=test&refresh=true`;
+
+  const updateURL = `https://www.friscoisd.org/jsonHandler/bondUpdate.ashx`;
 
   const dataSet = [];
+  // const dataSetUpdate = [];
 
   const NO_DATA_FOUND = `<div class="notFound">
   <div class="notFound__text">
@@ -34,7 +38,104 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   }
 
+  function getData2() {
+    fetch(updateURL)
+      .then((response) => response.json())
+      .then((data) => {
+        dataSet.push(...data);
+        init();
+      })
+      .catch((error) => {
+        app.innerHTML = `${NO_DATA_FOUND} ${error}`;
+      });
+  }
+
   function init() {
+    const middleContainerHTML = ({
+      Update,
+      UpdateDate,
+      UpdateImage,
+      ProjectId,
+    }) => {
+      return `
+      <div class="container__middle">
+      <div class="top__title_middle middle-title">
+        <h1>Updates</h1>
+        <p>
+          <em class="fa fa-pencil-square" aria-hidden="true"></em> Updated
+          information
+        </p>
+      </div>
+      <div class="middle__news">
+        <div class="news__top">
+          <img
+            src="${UpdateImage}"
+            alt="Updates and news"
+          />
+        </div>
+        <div class="news__bottom">
+          <div class="bottom__title">
+            <h2>GroundBreaking Ceremony</h2>
+          </div>
+          <div class="bottom__description">
+            <p>
+              ${
+                Update != null
+                  ? Update
+                  : "This project is part of the bond approved by Frisco ISD voters in November 2018. The bond package will provide funding for new schools and maintenance for existing facilities through an enrollment of 72,000 students or the 2025-26 school year."
+              }
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="middle__news">
+        <div class="news__top">
+          <img
+            src="${UpdateImage}"
+            alt="Updates and news"
+          />
+        </div>
+        <div class="news__bottom">
+          <div class="bottom__title">
+            <h2>GroundBreaking Ceremony</h2>
+          </div>
+          <div class="bottom__description">
+            <p>
+              ${
+                Update != null
+                  ? Update
+                  : "This project is part of the bond approved by Frisco ISD voters in November 2018. The bond package will provide funding for new schools and maintenance for existing facilities through an enrollment of 72,000 students or the 2025-26 school year."
+              }
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="middle__news">
+        <div class="news__top">
+          <img
+            src="${UpdateImage}"
+            alt="Updates and news"
+          />
+        </div>
+        <div class="news__bottom">
+          <div class="bottom__title">
+            <h2>GroundBreaking Ceremony</h2>
+          </div>
+          <div class="bottom__description">
+              <p>
+                ${
+                  Update != null
+                    ? Update
+                    : "This project is part of the bond approved by Frisco ISD voters in November 2018. The bond package will provide funding for new schools and maintenance for existing facilities through an enrollment of 72,000 students or the 2025-26 school year."
+                }
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+      `;
+    };
+
     const topContainerHTML = ({
       ThumbnailImg,
       ProjectTitle,
@@ -89,6 +190,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }</p>
           </div>
         </div>
+
         <!-- Projected Budget -->
         <div class="top__info-extra">
           <div class="info-extra__icon">
@@ -131,78 +233,12 @@ document.addEventListener("DOMContentLoaded", () => {
         </p>
       </div>
     </div>
-    <div class="container__middle">
-      <div class="top__title_middle middle-title">
-        <h1>Updates</h1>
-        <p>
-          <em class="fa fa-pencil-square" aria-hidden="true"></em> Updated
-          information
-        </p>
-      </div>
-      <div class="middle__news">
-        <div class="news__top">
-          <img
-            src="https://res.cloudinary.com/duprwuo4j/image/upload/v1598505085/tim-mossholder-WE_Kv_ZB1l0-unsplash_1_x8iqrj.jpg"
-            alt="Updates and news"
-          />
-        </div>
-        <div class="news__bottom">
-          <div class="bottom__title">
-            <h2>GroundBreaking Ceremony</h2>
-          </div>
-          <div class="bottom__description">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quod
-              eos atque, nemo iste earum, alias quam rem quibusdam incidunt
-              error commodi impedit magnam officia?Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Ab quod eos atque, nemo iste earum
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="middle__news">
-        <div class="news__top">
-          <img
-            src="https://res.cloudinary.com/duprwuo4j/image/upload/v1598505164/deleece-cook-zzjLGF_6dx4-unsplash_1_hjkqeh.jpg"
-            alt="Updates and news"
-          />
-        </div>
-        <div class="news__bottom">
-          <div class="bottom__title">
-            <h2>GroundBreaking Ceremony</h2>
-          </div>
-          <div class="bottom__description">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quod
-              eos atque, nemo iste earum, alias quam rem quibusdam incidunt
-              error commodi impedit magnam officia?Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Ab quod eos atque, nemo iste earum
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="middle__news">
-        <div class="news__top">
-          <img
-            src="https://res.cloudinary.com/duprwuo4j/image/upload/v1602433185/hamilton-hs_siuobu.jpg"
-            alt="Updates and news"
-          />
-        </div>
-        <div class="news__bottom">
-          <div class="bottom__title">
-            <h2>GroundBreaking Ceremony</h2>
-          </div>
-          <div class="bottom__description">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quod
-              eos atque, nemo iste earum, alias quam rem quibusdam incidunt
-              error commodi impedit magnam officia?Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Ab quod eos atque, nemo iste earum
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+
+    <!-- Middle UPDATE Container -->
+
+    
+
+    <!-- Bottom img Container -->
     <div class="container-bottom">
       <div class="top__title">
         <h1>Project Images</h1>
@@ -338,27 +374,11 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>`;
     };
 
-    const middleContainerHTML = ({
-      ThumbnailImg,
-      ProjectTitle,
-      ProjectedCompletionString,
-      ProjectedBudget,
-      PercentComplete,
-      Description,
-      IsComplete,
-      ProjectId,
-      Category,
-      CampusType,
-    }) => {
-      return `
-      `;
-    };
-
     function displayMatches() {
       const html = dataSet
         .filter(function (data) {
           // Pass here dynamic ID
-          return data.ProjectId === "18BD-1005";
+          return data.ProjectId === "18BD-1002";
         })
         .map((data) => {
           return topContainerHTML(data);
@@ -371,6 +391,7 @@ document.addEventListener("DOMContentLoaded", () => {
         app.innerHTML = `${NO_DATA_FOUND}`;
       }
     }
+
     displayMatches();
   }
 
@@ -388,14 +409,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.onload = () => {
     getData();
+    getData2();
   };
 
-  function getParameterByName(name, url = window.location.href) {
-    name = name.replace(/[\[\]]/g, "\\$&");
-    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-      results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return "";
-    return decodeURIComponent(results[2].replace(/\+/g, " "));
-  }
+  // function getParameterByName(name, url = window.location.href) {
+  //   name = name.replace(/[\[\]]/g, "\\$&");
+  //   let regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+  //     results = regex.exec(url);
+  //   if (!results) return null;
+  //   if (!results[2]) return "";
+  //   return decodeURIComponent(results[2].replace(/\+/g, " "));
+  // }
 });
