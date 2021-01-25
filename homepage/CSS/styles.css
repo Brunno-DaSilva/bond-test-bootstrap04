@@ -52,3 +52,6 @@ h1 {
     width: 99%;
   }
 }
+
+@media (max-height: 580px) {
+}
