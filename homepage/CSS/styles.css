@@ -43,6 +43,89 @@ h1 {
   margin-top: 1.5rem;
 }
 
+.description__container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.description__progress-bar {
+  background-color: #d8d8d8;
+  border-radius: 20px;
+  position: relative;
+  margin: 15px 0;
+  height: 60px;
+  width: 600px;
+}
+
+.progress-bar__completed {
+  background-color: #184366;
+  background-image: linear-gradient(43deg, #184366 10%, #5ab3c4 90%);
+  box-shadow: 0 3px 3px -5px var(--FISD-light-blue),
+    0 2px 5px var(--FISD-light-blue);
+  border-radius: 20px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 0;
+  opacity: 0;
+  transition: 1s ease 0.3s;
+}
+.progress-bar__completed span {
+  color: #fff;
+  font-size: 2rem;
+}
+
+.description__text {
+}
+
+/*.btn*/
+.button__container,
+.button__holder {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.button__holder {
+  flex-direction: row;
+}
+
+.button-style {
+  box-sizing: border-box;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid var(--FISD-light-orange);
+  border-radius: 0.6em;
+  color: var(--FISD-light-orange);
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 1;
+  margin: 20px;
+  padding: 1.2em 2.8em;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  transition: ease-in-out 0.2s;
+}
+
+.button-style:hover,
+.button-style:focus {
+  color: #fff;
+  outline: 0;
+  background-color: #e95b37;
+}
+
 @media screen and (max-width: 787px) {
   body {
     background-color: #dfdfdf !important;

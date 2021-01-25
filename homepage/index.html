@@ -52,6 +52,16 @@
 
     <div id="app">
       <div class="description__container">
+        <div class="description__progress-bar" id="progressBar__container">
+          <div
+            id="progressBar"
+            class="progress-bar__completed"
+            data-completion="45"
+          >
+            <span>45% Completed</span>
+          </div>
+        </div>
+
         <div class="description__text">
           <p>
             In November 2018, Frisco ISD voters approved a $691 million bond
@@ -74,16 +84,16 @@
             The bond program received the support of 61 percent of voters.
           </p>
         </div>
-        <div class="description__progress-bar" id="progressBar__container">
-          <div id="progressBar"></div>
-        </div>
       </div>
       <div class="button__container">
-        <div class="btn first">
-          <button type="button">New Buildings</button>
-          <button type="button">REFRESH & RENEW</button>
-          <button type="button">SECURITY</button>
-          <button type="button">ACADEMICS</button>
+        <div>
+          <h2>Categories</h2>
+        </div>
+        <div class="button__holder">
+          <button type="button" class="button-style">New Buildings</button>
+          <button type="button" class="button-style">REFRESH & RENEW</button>
+          <button type="button" class="button-style">SECURITY</button>
+          <button type="button" class="button-style">ACADEMICS</button>
         </div>
       </div>
     </div>
