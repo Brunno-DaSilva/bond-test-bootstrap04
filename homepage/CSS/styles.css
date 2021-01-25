@@ -81,6 +81,14 @@ h1 {
 }
 
 .description__text {
+  width: 70%;
+}
+.description__text p {
+  padding: 1.5rem 1rem;
+  color: var(--FISD-dark-blue);
+  font-size: 2.2rem !important;
+  letter-spacing: 0.1rem;
+  text-align: left;
 }
 
 /*.btn*/
