@@ -2,12 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Variables
 
   const app = document.getElementById("app");
-  // const top_Container = document.getElementById("container__top");
 
-  // [ ] = projectId
-  // getParameterByName("pid")
-
-  // const project_ID = getParameterByName("projectId");
   const project_ID = "18BD-1002";
 
   // const baseURL = `https://res.friscoisd.org/services/Bond/Project?filterType=id&filter=${project_ID}&refresh=true`;
