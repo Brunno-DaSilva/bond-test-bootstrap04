@@ -26,11 +26,14 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-h1 {
+h1,
+h2 {
   margin: 3rem 0;
-  font-family: "Cutive Mono", monospace;
   font-size: 3rem;
   color: var(--FISD-dark-blue);
+}
+h2 {
+  font-size: 2.8rem;
 }
 
 #app {
@@ -41,6 +44,31 @@ h1 {
   width: 90%;
   min-height: 40vh;
   margin-top: 1.5rem;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+}
+
+.top__img {
+  height: 40rem;
+  overflow: hidden;
+  box-shadow: 0 14px 24px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  border-radius: 0.5rem;
+}
+.top__img img {
+  width: 100%;
+  object-fit: none;
+  object-position: right;
+}
+img {
+  max-height: 100%;
+  object-fit: scale-down;
+  vertical-align: bottom;
 }
 
 .description__container {
@@ -81,7 +109,7 @@ h1 {
 }
 
 .description__text {
-  width: 70%;
+  width: 90%;
 }
 .description__text p {
   padding: 1.5rem 1rem;
