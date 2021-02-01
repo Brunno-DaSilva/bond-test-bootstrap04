@@ -1,6 +1,8 @@
-console.log("こんにちは、私は日本語を話すのが好きです");
-
 const progress = document.querySelector(".progress-bar__completed");
+const percentage_completion = document.getElementById("percentage_completion");
 
-progress.style.width = progress.getAttribute("data-completion") + "%";
+const data = 70;
+const percentage_span = `<span>${data} Completion</span>`;
+percentage_completion.innerHTML = `${percentage_span}`;
+progress.style.width = `${data}%`;
 progress.style.opacity = 1;
