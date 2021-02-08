@@ -36,6 +36,13 @@ h2 {
   font-size: 2.8rem;
 }
 
+h1,
+h2,
+p,
+span {
+  font-family: "Roboto", sans-serif;
+}
+
 #app {
   display: flex;
   flex-direction: column;
@@ -114,9 +121,10 @@ img {
 .description__text p {
   padding: 1.5rem 1rem;
   color: var(--FISD-dark-blue);
-  font-size: 2.2rem !important;
+  font-size: 2.6rem !important;
   letter-spacing: 0.1rem;
   text-align: left;
+  line-height: 4rem;
 }
 
 /*.btn*/
