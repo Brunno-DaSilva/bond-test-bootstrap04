@@ -145,9 +145,9 @@ img {
   box-sizing: border-box;
   appearance: none;
   background-color: transparent;
-  border: 2px solid var(--FISD-light-orange);
+  border: 2px solid var(--FISD-light-green);
   border-radius: 0.6em;
-  color: var(--FISD-light-orange);
+  color: var(--FISD-light-green);
   cursor: pointer;
   display: flex;
   align-self: center;
@@ -167,7 +167,19 @@ img {
 .button-style:focus {
   color: #fff;
   outline: 0;
-  background-color: #e95b37;
+  background-color: var(--FISD-light-green);
+}
+
+.all-background {
+  color: var(--FISD-light-orange);
+  border: 2px solid var(--FISD-light-orange);
+}
+
+.all-background:hover,
+.all-background:focus {
+  color: #fff;
+  outline: 0;
+  background-color: var(--FISD-light-orange);
 }
 
 @media screen and (max-width: 787px) {
