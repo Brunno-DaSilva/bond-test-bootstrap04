@@ -16,13 +16,22 @@ function getData(url) {
       return res.json();
     })
     .then((jsonData) => {
-      percentage_completion.innerHTML = `${jsonData.CompletionPercentage}`;
-      progress.style.width = `${jsonData.CompletionPercentage}%`;
-      progress.style.opacity = 1;
+      displayPercentage(jsonData);
     })
     .catch((error) => {
       console.log("This is an error", error);
     });
+}
+
+function displayPercentage(data) {
+  const percentage_result =
+    data.CompletionPercentage < 30
+      ? `${data.CompletionPercentage}%`
+      : `${data.CompletionPercentage}% Completion`;
+
+  percentage_completion.innerHTML = `${percentage_result}`;
+  progress.style.width = `${data.CompletionPercentage}%`;
+  progress.style.opacity = 1;
 }
 
 getData(BASE_URL);
