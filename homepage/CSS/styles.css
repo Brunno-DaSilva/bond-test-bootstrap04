@@ -136,6 +136,9 @@ img {
   justify-content: center;
   align-items: center;
 }
+.button__container {
+  margin-bottom: 5rem !important;
+}
 .categories__title h2 {
   font-size: 3.1rem !important;
 }
