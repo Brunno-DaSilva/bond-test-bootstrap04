@@ -30,8 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
       completionPercent: 35,
       finalCost: 56652000,
       actualCompletion: "05/26/2022",
-      img:
-        "https://res.cloudinary.com/duprwuo4j/image/upload/v1598505291/neonbrand-zFSo6bnZJTw-unsplash_1_q3dvgg.jpg",
+      img: "https://res.cloudinary.com/duprwuo4j/image/upload/v1598505291/neonbrand-zFSo6bnZJTw-unsplash_1_q3dvgg.jpg",
     },
     {
       projectId: "ABC1231",
@@ -47,8 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
       completionPercent: 13,
       finalCost: 26652000,
       actualCompletion: "03/26/2022",
-      img:
-        "https://res.cloudinary.com/duprwuo4j/image/upload/v1602436709/small-libra_p0at5d.jpg",
+      img: "https://res.cloudinary.com/duprwuo4j/image/upload/v1602436709/small-libra_p0at5d.jpg",
     },
     {
       projectId: "ABC1232",
@@ -64,8 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
       completionPercent: 45,
       finalCost: 37652000,
       actualCompletion: "03/26/2022",
-      img:
-        "https://res.cloudinary.com/duprwuo4j/image/upload/v1598505164/deleece-cook-zzjLGF_6dx4-unsplash_1_hjkqeh.jpg",
+      img: "https://res.cloudinary.com/duprwuo4j/image/upload/v1598505164/deleece-cook-zzjLGF_6dx4-unsplash_1_hjkqeh.jpg",
     },
     {
       projectId: "ABC1233",
@@ -81,8 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
       completionPercent: 8,
       finalCost: 37652000,
       actualCompletion: "03/26/2022",
-      img:
-        "https://res.cloudinary.com/duprwuo4j/image/upload/v1598505085/tim-mossholder-WE_Kv_ZB1l0-unsplash_1_x8iqrj.jpg",
+      img: "https://res.cloudinary.com/duprwuo4j/image/upload/v1598505085/tim-mossholder-WE_Kv_ZB1l0-unsplash_1_x8iqrj.jpg",
     },
     {
       projectId: "ABC1234",
@@ -98,8 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
       completionPercent: 10,
       finalCost: 36652000,
       actualCompletion: "03/26/2022",
-      img:
-        "https://res.cloudinary.com/duprwuo4j/image/upload/v1598505052/cdc-GDokEYnOfnE-unsplash_1_fmcyhc.jpg",
+      img: "https://res.cloudinary.com/duprwuo4j/image/upload/v1598505052/cdc-GDokEYnOfnE-unsplash_1_fmcyhc.jpg",
     },
     {
       projectId: "ABC1235",
@@ -115,8 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
       completionPercent: 74,
       finalCost: 19652000,
       actualCompletion: "03/26/2022",
-      img:
-        "https://res.cloudinary.com/duprwuo4j/image/upload/v1598505021/ben-mullins-je240KkJIuA-unsplash_1_svdhzv.jpg",
+      img: "https://res.cloudinary.com/duprwuo4j/image/upload/v1598505021/ben-mullins-je240KkJIuA-unsplash_1_svdhzv.jpg",
     },
     {
       projectId: "ABC1236",
@@ -132,8 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
       completionPercent: 88,
       finalCost: 50652000,
       actualCompletion: "03/26/2022",
-      img:
-        "https://res.cloudinary.com/duprwuo4j/image/upload/v1598504075/friscoISD_sezpau.png",
+      img: "https://res.cloudinary.com/duprwuo4j/image/upload/v1598504075/friscoISD_sezpau.png",
     },
     {
       projectId: "ABC1237",
@@ -149,8 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
       completionPercent: 70,
       finalCost: 27652000,
       actualCompletion: "03/26/2022",
-      img:
-        "https://res.cloudinary.com/duprwuo4j/image/upload/v1598502460/pencil_sl098k.jpg",
+      img: "https://res.cloudinary.com/duprwuo4j/image/upload/v1598502460/pencil_sl098k.jpg",
     },
     {
       projectId: "ABC1238",
@@ -166,8 +158,7 @@ document.addEventListener("DOMContentLoaded", () => {
       completionPercent: 26,
       finalCost: 29652000,
       actualCompletion: "03/26/2022",
-      img:
-        "https://res.cloudinary.com/duprwuo4j/image/upload/v1602433185/hamilton-hs_siuobu.jpg",
+      img: "https://res.cloudinary.com/duprwuo4j/image/upload/v1602433185/hamilton-hs_siuobu.jpg",
     },
     {
       projectId: "ABC1239",
@@ -183,8 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
       completionPercent: 99,
       finalCost: 24652000,
       actualCompletion: "03/26/2022",
-      img:
-        "https://res.cloudinary.com/duprwuo4j/image/upload/v1602433230/hc-const_vxrkcn.jpg",
+      img: "https://res.cloudinary.com/duprwuo4j/image/upload/v1602433230/hc-const_vxrkcn.jpg",
     },
     {
       projectId: "ABC1240",
@@ -200,8 +190,7 @@ document.addEventListener("DOMContentLoaded", () => {
       completionPercent: 90,
       finalCost: 30652000,
       actualCompletion: "03/26/2022",
-      img:
-        "https://res.cloudinary.com/duprwuo4j/image/upload/v1602433275/hc-bus_znhbco.jpg",
+      img: "https://res.cloudinary.com/duprwuo4j/image/upload/v1602433275/hc-bus_znhbco.jpg",
     },
     {
       projectId: "ABC1241",
@@ -217,8 +206,7 @@ document.addEventListener("DOMContentLoaded", () => {
       completionPercent: 70,
       finalCost: 45652000,
       actualCompletion: "03/26/2022",
-      img:
-        "https://res.cloudinary.com/duprwuo4j/image/upload/v1602436864/small-hs-plano_x3hktu.jpg",
+      img: "https://res.cloudinary.com/duprwuo4j/image/upload/v1602436864/small-hs-plano_x3hktu.jpg",
     },
     {
       projectId: "ABC1242",
@@ -234,8 +222,7 @@ document.addEventListener("DOMContentLoaded", () => {
       completionPercent: 98,
       finalCost: 45652000,
       actualCompletion: "03/26/2022",
-      img:
-        "https://res.cloudinary.com/duprwuo4j/image/upload/v1602436864/small-hs-plano_x3hktu.jpg",
+      img: "https://res.cloudinary.com/duprwuo4j/image/upload/v1602436864/small-hs-plano_x3hktu.jpg",
     },
     {
       projectId: "ABC1249",
@@ -251,8 +238,7 @@ document.addEventListener("DOMContentLoaded", () => {
       completionPercent: 15,
       finalCost: 26652000,
       actualCompletion: "03/26/2022",
-      img:
-        "https://res.cloudinary.com/duprwuo4j/image/upload/v1602436709/small-libra_p0at5d.jpg",
+      img: "https://res.cloudinary.com/duprwuo4j/image/upload/v1602436709/small-libra_p0at5d.jpg",
     },
   ];
 
@@ -652,5 +638,3 @@ document.addEventListener("DOMContentLoaded", () => {
     displayMatches();
   };
 });
-
-
